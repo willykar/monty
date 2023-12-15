@@ -6,20 +6,17 @@
  */
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-	stack_t *coppy_head;
+	stack_t *last = *head;
 
-	coppy_head = *head;
-	if (*head == NULL || (*head)->next == NULL)
-	{
-		return;
-	}
-	while (coppy_head->next)
-	{
-		coppy_head = coppy_head->next;
-	}
-	coppy_head->next = *head;
-	coppy_head->prev->next = NULL;
-	coppy_head->prev = NULL;
-	(*head)->prev = coppy_head;
-	(*head) = coppy_head;
+    if (*head == NULL || (*head)->next == NULL)
+        return;
+
+    while (last->next != NULL)
+        last = last->next;
+
+    last->next = *head;
+    last->prev->next = NULL;
+
+    (*head)->prev = last;
+    *head = last;
 }
