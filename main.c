@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
 	{
 		cont = NULL;
 		read_line = getline(&cont, &size, file);
-		bus.cont = cont;
+		bus.content = cont;
 		counter++;
 		if (read_line > 0)
 		{

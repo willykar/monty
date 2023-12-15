@@ -20,6 +20,6 @@ void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 	}
 	tech_mo_p->next = *head;
 	(*head)->next = NULL;
-	(*head)->prev = tech_m_p;
+	(*head)->prev = tech_mo_p;
 	(*head) = aux;
 }
